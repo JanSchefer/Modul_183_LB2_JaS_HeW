@@ -6,3 +6,15 @@ Die Applikation wird im Rahmen der LB2 im [Modul 183](https://gitlab.com/ch-tbz-
 ## Hinweise zur Installation
 Bevor mit `docker compose up` die Applikation gestartet wird, muss der Source-Pfad für's Volume an Ihre Umgebung angepasst werden (dass die todo-list-Applikation auch korrekt in den Container rein gelinkt wird). Wichtig: die DB wird nicht automatisch erzeugt. Verbinden Sie sich dafür mit einem SQL-Client Ihrer Wahl auf den Datenbankcontainer (localhost port 3306) und verwenden Sie [m183_lb2.sql](./todo-list/m183_lb2.sql), um die Datenbank / Datenstruktur zu erzeugen. Beachten Sie, dass die Datenbank nach einem "neu bauen" des Containers wieder weg sein wird und Sie diese nochmals anlegen müssten.
 
+# To Start Application:
+
+## Database:
+Dbeaver
+mariaDB
+name: leer lassesn
+User: root
+Password: Some.Real.Secr3t
+
+## PHP: 
+php filename.php
+

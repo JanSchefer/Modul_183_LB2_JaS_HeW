@@ -10,9 +10,13 @@ Bevor mit `docker compose up` die Applikation gestartet wird, muss der Source-Pf
 
 ## Database:
 Dbeaver
+
 mariaDB
+
 name: leer lassesn
+
 User: root
+
 Password: Some.Real.Secr3t
 
 ## PHP: 

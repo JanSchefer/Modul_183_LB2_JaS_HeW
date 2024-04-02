@@ -44,15 +44,7 @@ todo-list
   - Before successfull update of Task
   - After successfull update of Task
 
-## TODO
-What needs to be done?
-3. Figure out what’s wrong in lines 49 and 50 of backgroundsearch.php
-4. Sanitise for XSS
-5. Find out why delete.php despawned (referenced in user/tasklist.php, ln44)
-6. Find out what the abomination in the CallAPI function in search is, and probably remove the switch case there, replacing it with only the default
-8. Get images
 
-
-7. Encryption (if possible) (not just URL requests, but entire message bodies are in plain text) (example: savetask)
+1. Encryption (if possible) (not just URL requests, but entire message bodies are in plain text) (example: savetask)
   - While URL shouldn’t be encrypted, body should. 
   - Move info from URL to body in search/v2/index.php

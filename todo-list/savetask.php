@@ -26,7 +26,8 @@
 
     require_once 'log/log.php';
     
-    if ($id == ""){
+    // the if statement searches for "<script>" tags and deletes them if found.
+    if ($id == "" && $title = htmlspecialchars(strip_tags($title))){
       $log->info("User with id '$userid' is creating a new task:"
         . "{ title: '$title', state: '$state', userID: '$userid' }");
 
@@ -42,7 +43,7 @@
       $log->info("User with id '$userid' has created a new task:"
         . "{ id: '$db_id', title: '$title', state: '$state', userID: '$userid' }");
     }
-    else {
+    else if($title = htmlspecialchars(strip_tags($title))) {
       $stmt = new Stmt("select title, state, userID from tasks where id = ?");
       $stmt = $stmt->bindString($id)->execute();
 
@@ -60,6 +61,8 @@
       . " { id: '$id' title: '$db_title', state: '$db_state', userID: '$db_userid' }"
       . " to: { id: '$id', title: '$title', state: '$state', userID: '$db_userid' }");
 
+    }else{
+      $log->warning("User with id '$userid' tried to post an illegal statement");
     }
 
     echo "<span class='info info-success'>Update successfull</span>";

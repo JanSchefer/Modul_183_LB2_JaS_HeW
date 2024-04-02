@@ -5,3 +5,40 @@
 [2024-04-02T07:21:29.283332+00:00] secureApplication.INFO: User 'user1' has deleted task with id '1'  
 [2024-04-02T07:21:45.630302+00:00] secureApplication.INFO: User 'user1' is deleting task with id '8'  
 [2024-04-02T07:21:45.644623+00:00] secureApplication.INFO: User 'user1' has deleted task with id '8'  
+[2024-04-02T08:00:40.220805+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
+[2024-04-02T08:00:45.519586+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:01:25.266616+00:00] secureApplication.INFO: User with id '2' is updating the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:01:25.278296+00:00] secureApplication.INFO: User with id '2' has updated the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:01:49.498006+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:01:53.988935+00:00] secureApplication.INFO: User with id '2' is updating the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:01:53.996431+00:00] secureApplication.INFO: User with id '2' has updated the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:02:09.302778+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:02:12.077615+00:00] secureApplication.INFO: User with id '2' is updating the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:02:12.085244+00:00] secureApplication.INFO: User with id '2' has updated the task { id: '' title: '', state: '', userID: '' } to: { id: '', title: '', state: 'open', userID: '' }  
+[2024-04-02T08:08:24.617430+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'as', state: 'open', userID: '2' }  
+[2024-04-02T08:08:24.635565+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '1', title: 'as', state: 'open', userID: '2' }  
+[2024-04-02T08:08:29.727103+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:08:32.064963+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'a', state: 'open', userID: '2' }  
+[2024-04-02T08:08:32.073443+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '2', title: 'a', state: 'open', userID: '2' }  
+[2024-04-02T08:08:37.404243+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:08:58.408453+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: '&lt;script&gt;{stuff}&lt;/script&gt;', state: 'open', userID: '2' }  
+[2024-04-02T08:08:58.419451+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '3', title: '&lt;script&gt;{stuff}&lt;/script&gt;', state: 'open', userID: '2' }  
+[2024-04-02T08:12:35.255646+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:12:38.445534+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'a', state: 'open', userID: '2' }  
+[2024-04-02T08:12:38.452004+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '4', title: 'a', state: 'open', userID: '2' }  
+[2024-04-02T08:12:44.856732+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:13:13.635454+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: '&lt;script&gt;{alert}&lt;/script&gt;', state: 'open', userID: '2' }  
+[2024-04-02T08:13:13.644439+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '5', title: '&lt;script&gt;{alert}&lt;/script&gt;', state: 'open', userID: '2' }  
+[2024-04-02T08:13:27.678592+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:13:43.619617+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: '&lt;script&gt;alert(&quot;buenos&quot;)&lt;/script&gt;	', state: 'open', userID: '2' }  
+[2024-04-02T08:13:43.630270+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '6', title: '&lt;script&gt;alert(&quot;buenos&quot;)&lt;/script&gt;	', state: 'open', userID: '2' }  
+[2024-04-02T08:20:06.843942+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:20:11.823952+00:00] secureApplication.WARNING: User with id '2' tried to post an illegal statement  
+[2024-04-02T08:20:46.387282+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'hendrik', state: 'open', userID: '2' }  
+[2024-04-02T08:20:46.395711+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '7', title: 'hendrik', state: 'open', userID: '2' }  
+[2024-04-02T08:20:49.278605+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:20:51.126936+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'hendrik', state: 'open', userID: '2' }  
+[2024-04-02T08:20:51.135856+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '8', title: 'hendrik', state: 'open', userID: '2' }  
+[2024-04-02T08:20:56.756834+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-02T08:21:29.310099+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'alert(&quot;hednrik&quot;)', state: 'open', userID: '2' }  
+[2024-04-02T08:21:29.317031+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '9', title: 'alert(&quot;hednrik&quot;)', state: 'open', userID: '2' }  

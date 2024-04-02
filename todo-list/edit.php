@@ -1,9 +1,13 @@
 <?php
+    session_start();
     // Check if the user is logged in
-    if (!isset($_COOKIE['userid'])) {
+    if (!isset($_SESSION['userid'])) {
         header("Location: /");
         exit();
     }
+
+    require_once 'config.php';
+    require_once __ROOT__ . '/log/log.php';
 
     $options = array("Open", "In Progress", "Done");
 
@@ -15,7 +19,8 @@
     if (isset($_GET['id'])){
         $id = $_GET["id"];
         include 'fw/db.php';
-        $stmt = executeStatement("select ID, title, state from tasks where ID = $id");
+        $stmt = new Stmt("select ID, title, state from tasks where ID = ?");
+        $stmt = $stmt->bindString($id)->execute();
         if ($stmt->num_rows > 0) {
             $stmt->bind_result($db_id, $db_title, $db_state);
             $stmt->fetch();
@@ -27,9 +32,17 @@
     require_once 'fw/header.php';
 ?>
 
-<?php if (isset($_GET['id'])) { ?>
+<?php
+
+if (isset($_GET['id'])) {
+   $log->info("User with username '" . $_SESSION['username'] . "' is editing the task with the id: " . $_GET['id']);
+  ?>
     <h1>Edit Task</h1>
-<?php }else { ?>
+<?php
+
+ }else {
+  $log->info("User with username '" . $_SESSION['username'] . "' starts creating a new task");
+  ?>
     <h1>Create Task</h1>
 <?php } ?>
 

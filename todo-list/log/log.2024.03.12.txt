@@ -1,0 +1,8 @@
+[2024-03-12T14:35:40.490810+00:00] name.WARNING: User login failed as 'user1' [] []
+[2024-03-12T14:35:40.609650+00:00] name.WARNING: User login failed as 'user1' [] []
+[2024-03-12T14:40:34.933667+00:00] name.INFO: User successfully logged in as 'user1' [] []
+[2024-03-12T14:40:43.508115+00:00] name.INFO: User with username '' logged out [] []
+[2024-03-12T14:41:30.682456+00:00] name.INFO: User with username 'user1' logged out [] []
+[2024-03-12T14:41:37.641415+00:00] name.WARNING: User login failed as 'user1' [] []
+[2024-03-12T14:42:01.083982+00:00] name.INFO: User successfully logged in as 'user1' [] []
+[2024-03-12T14:42:03.896572+00:00] name.INFO: User with username 'user1' logged out [] []

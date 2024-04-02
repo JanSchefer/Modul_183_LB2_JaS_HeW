@@ -1,10 +1,13 @@
 <?php
+    require_once 'log/log.php';
+    session_start();
+
+    $log->info("User with username '" . $_SESSION['username'] . "' logged out");
     
-    unset($_COOKIE['username']); 
-    setcookie('username', '', -1, '/'); 
-    unset($_COOKIE['userid']); 
-    setcookie('userid', '', -1, '/'); 
+    session_unset();
+    session_destroy();
 
     header("Location: /");
+    
     exit();
 ?>

@@ -1,5 +1,8 @@
 <?php
+// Config for database configuration
 require_once 'config.php';
+// Create logs with given information
+require_once __ROOT__ . '/log/log.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['username']) && isset($_GET['password'])) {
@@ -12,10 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['username']) && isset($_G
 
     // Check connection
     if ($conn->connect_error) {
+        $log->error("Database connection failed for user '" . $username . "': " . $conn->connect_error);
         die("Connection failed: " . $conn->connect_error);
     }
     // Prepare SQL statement to retrieve user from database
-    $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username='$username'");
+    $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
 
     // Execute the statement
     $stmt->execute();
@@ -29,19 +34,23 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['username']) && isset($_G
         $stmt->fetch();
         // Verify the password
         if ($password == $db_password) {
+            $log->info("User successfully logged in as '" . $username . "'");
             // Password is correct, store username in session
-            setcookie("username", $username, -1, "/"); // 86400 = 1 day
-            setcookie("userid", $db_id, -1, "/"); // 86400 = 1 day
+            session_start();
+            $_SESSION["username"] = $username;
+            $_SESSION["userid"] = $db_id;
             // Redirect to index.php
             header("Location: index.php");
             exit();
         } else {
+            $log->warning("User login failed as '" . $username . "'");
             // Password is incorrect
             echo "Incorrect password";
         }
     } else {
-        // Username does not exist
-        echo "Username does not exist";
+        $log->warning("Username not found: '" . $username . "'");
+        // Username does not exist (fixed)
+        echo "Incorrect password";
     }
 
     // Close statement

@@ -1,4 +1,5 @@
 <?php
+   require_once 'log/log.php';
 
     if (!isset($_POST["provider"]) || !isset($_POST["terms"]) || !isset($_POST["userid"])){
         exit("Not enough information provided");
@@ -21,7 +22,7 @@
            case "PUT":
               curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
               if ($data)
-                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
               break;
            default:
               if ($data)

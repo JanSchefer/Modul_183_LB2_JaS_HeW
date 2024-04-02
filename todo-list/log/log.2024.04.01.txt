@@ -1,0 +1,14 @@
+[2024-04-01T09:39:51.152577+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
+[2024-04-01T10:11:11.041224+00:00] secureApplication.INFO: User with username 'user1' logged out  
+[2024-04-01T10:11:27.153411+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
+[2024-04-01T10:13:26.499458+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-01T10:13:30.415373+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'TEST', state: 'in progress', userID: '2' }  
+[2024-04-01T10:13:30.422255+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '1', title: 'TEST', state: 'in progress', userID: '2' }  
+[2024-04-01T10:13:37.752413+00:00] secureApplication.INFO: User with username 'user1' is editing the task with the id: 1  
+[2024-04-01T11:33:32.852953+00:00] secureApplication.INFO: User with id '2' is searching for term: test  
+[2024-04-01T18:45:29.620456+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
+[2024-04-01T18:45:31.460833+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'TEST', state: 'open', userID: '2' }  
+[2024-04-01T18:45:31.465852+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '1', title: 'TEST', state: 'open', userID: '2' }  
+[2024-04-01T18:52:32.010722+00:00] secureApplication.INFO: User with username 'user1' is editing the task with the id: 1  
+[2024-04-01T18:53:04.103854+00:00] secureApplication.INFO: User with username 'user1' logged out  
+[2024-04-01T18:53:13.118669+00:00] secureApplication.INFO: User successfully logged in as 'user1'  

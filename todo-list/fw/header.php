@@ -10,8 +10,8 @@
 </head>
 <body>
     <header>
-        <div>This is the insecure m183 test app</div>
-        <?php  if (isset($_COOKIE['userid'])) { ?>
+        <div style="white-space: nowrap;">This is the <strike>in</strike>SECURE m183 test app</div>
+        <?php  if (isset($_SESSION['userid'])) { ?>
         <nav>
             <ul>
                 <li><a href="/">Tasks</a></li>

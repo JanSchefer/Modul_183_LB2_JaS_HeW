@@ -1,22 +1,26 @@
 <?php
-    if (!isset($_COOKIE['username'])) {
-        header("Location: ../login.php");
+    session_start();
+    // Check if the user is logged in
+    if (!isset($_SESSION['userid'])) {
+        header("Location: /");
         exit();
     }
 
     require_once '../config.php';
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    // Create logs with given information
+    require_once __ROOT__ . '/log/log.php';
+    require_once __ROOT__ . '/fw/db.php';
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $stmt = new Stmt("SELECT roles.title FROM users inner join permissions on users.ID = permissions.userID inner join roles on permissions.roleID = roles.ID WHERE users.username = ?");
+    $stmt = $stmt->bindString($_SESSION['username'])->execute();
+    $stmt->bind_result($db_allowed);
+    $stmt->fetch();
+    if ($db_allowed != "Admin") {
+        exit();
     }
-    // Prepare SQL statement to retrieve user from database
-    $stmt = $conn->prepare("SELECT users.ID, users.username, users.password, roles.title FROM users inner join permissions on users.ID = permissions.userID inner join roles on permissions.roleID = roles.ID order by username");
-    // Execute the statement
-    $stmt->execute();
-    // Store the result
-    $stmt->store_result();
+
+    $stmt = new Stmt("SELECT users.ID, users.username, users.password, roles.title FROM users inner join permissions on users.ID = permissions.userID inner join roles on permissions.roleID = roles.ID order by username");
+    $stmt = $stmt->execute();
     // Bind the result variables
     $stmt->bind_result($db_id, $db_username, $db_password, $db_title);
 

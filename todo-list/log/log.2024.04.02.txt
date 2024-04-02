@@ -1,0 +1,7 @@
+[2024-04-02T07:03:46.671709+00:00] name.INFO: User with username 'user1' starts creating a new task [] []
+[2024-04-02T07:11:48.639754+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
+[2024-04-02T07:20:55.251927+00:00] secureApplication.INFO: User 'user1' is deleting task with id '1'  
+[2024-04-02T07:21:29.269457+00:00] secureApplication.INFO: User 'user1' is deleting task with id '1'  
+[2024-04-02T07:21:29.283332+00:00] secureApplication.INFO: User 'user1' has deleted task with id '1'  
+[2024-04-02T07:21:45.630302+00:00] secureApplication.INFO: User 'user1' is deleting task with id '8'  
+[2024-04-02T07:21:45.644623+00:00] secureApplication.INFO: User 'user1' has deleted task with id '8'  

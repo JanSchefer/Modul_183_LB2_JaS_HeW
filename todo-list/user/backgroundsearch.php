@@ -1,6 +1,7 @@
 <?php
-    if (!isset($_COOKIE['username'])) {
-        header("Location: ../login.php");
+    // Check if the user is logged in
+    if (!isset($_SESSION['userid'])) {
+        header("Location: /");
         exit();
     }
 
@@ -37,7 +38,7 @@
         submitHandler: function (form) {
             provider = $("#searchurl").val();
             terms = $("#terms").val();
-            userid = <?php echo $_COOKIE["userid"] ?>;
+            userid = <?php echo $_SESSION["userid"] ?>;
             $("#msg").show();
             $("#result").html("");
             $.post("search.php", { provider: provider, terms: terms, userid: userid }, function(data){

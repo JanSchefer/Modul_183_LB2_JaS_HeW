@@ -4,8 +4,16 @@ require_once 'config.php';
 // Create logs with given information
 require_once __ROOT__ . '/log/log.php';
 
+// Start session at the beginning of the script
+session_start();
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
+    // CSRF Protection: Verify CSRF token
+    if (!isset($_SESSION['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed");
+    }
+
     // Get username and password from the form
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -36,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
         if ($password == $db_password) {
             $log->info("User successfully logged in as '" . $username . "'");
             // Password is correct, store username in session
-            session_start();
             $_SESSION["username"] = $username;
             $_SESSION["userid"] = $db_id;
             // Redirect to index.php
@@ -72,6 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
+        <!-- CSRF Protection: Include CSRF token -->
+        <?php
+        $csrf_token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $csrf_token;
+        ?>
+        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
         <button type="submit">Login</button>
     </form>
 </body>

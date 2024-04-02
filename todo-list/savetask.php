@@ -26,7 +26,7 @@
 
     require_once 'log/log.php';
     
-    // the if statement searches for "<script>" tags and deletes them if found.
+    // the if statement searches for "<script>" tags and deltes them
     if ($id == "" && $title = htmlspecialchars(strip_tags($title))){
       $log->info("User with id '$userid' is creating a new task:"
         . "{ title: '$title', state: '$state', userID: '$userid' }");

@@ -42,3 +42,7 @@
 [2024-04-02T08:20:56.756834+00:00] secureApplication.INFO: User with username 'user1' starts creating a new task  
 [2024-04-02T08:21:29.310099+00:00] secureApplication.INFO: User with id '2' is creating a new task:{ title: 'alert(&quot;hednrik&quot;)', state: 'open', userID: '2' }  
 [2024-04-02T08:21:29.317031+00:00] secureApplication.INFO: User with id '2' has created a new task:{ id: '9', title: 'alert(&quot;hednrik&quot;)', state: 'open', userID: '2' }  
+[2024-04-02T09:39:52.151268+00:00] secureApplication.INFO: User with username 'user1' logged out  
+[2024-04-02T16:53:10.712986+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
+[2024-04-02T16:53:14.056860+00:00] secureApplication.INFO: User with username 'user1' logged out  
+[2024-04-02T16:53:24.135323+00:00] secureApplication.INFO: User successfully logged in as 'user1'  
